@@ -12,3 +12,5 @@ export const searchRobots = (state = intialState, action = {}) => {
       return state;
   }
 };
+
+export default searchRobots;

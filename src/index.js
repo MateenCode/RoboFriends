@@ -5,5 +5,7 @@ import App from "./containers/App";
 import registerServiceWorker from "./registerServiceWorker";
 import "tachyons";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import { store } from "./redux/store";
+
+ReactDOM.render(<App store={store} />, document.getElementById("root"));
 registerServiceWorker();
