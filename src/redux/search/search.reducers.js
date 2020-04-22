@@ -1,7 +1,7 @@
 import { CHANGE_SEARCH_FIELD } from "./search.types";
 
 const intialState = {
-  searchField: "",
+  searchField: ""
 };
 
 export const searchRobots = (state = intialState, action = {}) => {
