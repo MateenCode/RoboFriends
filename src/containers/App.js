@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setSearchField } from "../redux/search/search.action";
+import { setSearchField } from "../redux/robot/robot.action";
 
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";

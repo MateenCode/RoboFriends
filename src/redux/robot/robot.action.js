@@ -3,7 +3,7 @@ import {
   REQUEST_ROBOTS_PENDING,
   REQUEST_ROBOTS_SUCCESS,
   REQUEST_ROBOTS_FAILED
-} from "./search.types";
+} from "./robort.types";
 
 export const setSearchField = (text) => ({
   type: CHANGE_SEARCH_FIELD,
