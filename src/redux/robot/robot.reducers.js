@@ -5,11 +5,11 @@ import {
   REQUEST_ROBOTS_FAILED
 } from "./robort.types";
 
-const intialState = {
+const intialStateSearch = {
   searchField: ""
 };
 
-export const searchRobots = (state = intialState, action = {}) => {
+export const searchRobots = (state = intialStateSearch, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCH_FIELD:
       return { ...state, searchField: action.payload };
@@ -18,7 +18,13 @@ export const searchRobots = (state = intialState, action = {}) => {
   }
 };
 
-export const requestRobots = (state = intialState, action = {}) => {
+const intialStateRobots = {
+  isPending: false,
+  robots: [],
+  error: ""
+};
+
+export const requestRobots = (state = intialStateRobots, action = {}) => {
   switch (action.type) {
     case REQUEST_ROBOTS_PENDING:
       return { ...state, isPending: true };
@@ -26,7 +32,7 @@ export const requestRobots = (state = intialState, action = {}) => {
       return { ...state, robots: action.payload, isPending: false };
     case REQUEST_ROBOTS_FAILED:
       return { ...state, error: action.payload, isPending: false };
+    default:
+      return state;
   }
-  default:
-    return state
 };
