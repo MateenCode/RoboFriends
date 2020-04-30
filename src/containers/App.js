@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setSearchField } from "../redux/robot/robot.action";
+import { setSearchField, requestRobots } from "../redux/robot/robot.action";
 
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
@@ -43,13 +43,17 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.search.searchField
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => requestRobots(dispatch)
   };
 };
 
